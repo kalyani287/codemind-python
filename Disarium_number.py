@@ -9,7 +9,4 @@ while temp>0:
     sum=sum+int(rem**l)
     temp=temp//10
     l=l-1
-if sum==n:
-    print(True)
-else:
-    print(False)
+print(sum==n)
