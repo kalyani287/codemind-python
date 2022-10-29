@@ -1,30 +1,23 @@
 t=int(input())
 for i in range(t):
+    def is_prime(num):
+        if num<2:
+            return False
+        for i in range(2,int(num**0.5)+1):
+            if num%i==0:
+                return False
+        return True
+    def run_loop_till_prime(n,x):
+        while is_prime(n)==False :
+            n+=x
+        return n
     n=int(input())
-    a=n
-    b=n-1
-    while True:
-        is_prime=True
-        for i in range(2,int(a**0.5)+1):
-            if a%i==0:
-                is_prime=False
-                break
-        if is_prime==True:
-            break
-        else:
-            a+=1
-    while True:
-        is_prime1=True
-        for i in range(2,int(b**0.5)+1):
-            if b%i==0:
-                is_prime1=False
-                break
-        if is_prime1==True:
-             break
-        else:
-            b-=1
-    if (a-n)<(n-b):
-        print(a)
+    pp=run_loop_till_prime(n,-1)
+    np=run_loop_till_prime(n,1)
+    if (n-pp)<(np-n):
+        print(pp)
+    elif (n-pp)==(np-n):
+        print(pp)
     else:
-        print(b)
+        print(np)
         
